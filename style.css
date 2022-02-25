@@ -3,6 +3,17 @@
   src: url("./DTM_NF.ttf");
 }
 
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #a1bdce }
+}
+
+@keyframes typing {
+  from {width: 0; }
+  to {width: 50%; }
+}
+
+
 @keyframes white-out {
   from {font-size: 0px}
   to {font-size: 36px;}
@@ -13,8 +24,9 @@
   to {opacity: 100%;}
 }
 
-* {
-    background-color: #13141c;
+:root {
+    background-image: url("images/wall.jpg");
+    background-size: cover;
     text-align: center;
 }
 
@@ -29,47 +41,64 @@
 }
 
 .text_head {
-  animation-name: white-out;
-  animation-duration: 1s;
+  animation: typing 3.5s steps(30, end), blink-caret 1s step-end infinite;
   font-size: 36px;
+  border-right: 5px solid #a1bdce;
   text-align: center;
+  overflow: hidden;
+  margin: 0 auto;
+  white-space: nowrap;
   color: #cfcfcf;
-  transition: ease 1s;
+  transition: ease 2s;
   font-weight: bold;
 }
-div {
-  grid-gap: 1em;
+.window {
+  grid-gap: 2px;
   text-align: center;
   align-content: center;
+  display: grid;
+  padding: 10px;
+  margin: auto;
+  width: 75%;
+  border-radius: 20px;
+  box-shadow: 0px 0px 18px #000000;
+  position: center;
+  align: center;
 }
+div {
+    background-color: #0f0f17;
+}
+
+
 img {
   border-radius: 20%;
   animation-name: fade;
-  animation-duration: 2s;
+  animation-duration: 4s;
   box-shadow: 0px 4px 22px #000000;
   align-self: center;
   justify-self: center;
-  height: 270px;
-  margin: 50px 0px 10px 10px;
+  height: 210px;
+  margin: 20px 0px 20px 10px;
 }
-h1, h2, a {
-  color: var(--pr);
-}
+
 a:hover {
   color: var(--al);
 }
 button {
   align-self: top;
+  font-size: 18px;
   justify-self: right;
-  margin: 1.5em;
+  margin: 20px;
   border-radius: 100%;
-  padding: .75em;
+  padding: 8px 16px 8px 10px;
 }
 button {
   transform: scale(1.5);
   transition: all 0.2s ease-in-out;
   display: inline-block;
-  border: solid 4px;
+  background-color: transparent;
+  font-weight: bold;
+  border: solid 2px;
   border-radius: 50px;
   border-color: #d1d1d1;
   color: #d1d1d1;
@@ -78,7 +107,7 @@ button {
 button:hover {
   transform: scale(1.5);
   transition: all 0.4s ease;
-  border: solid 4px;
+  border: solid 2px;
   border-color: transparent;
   box-shadow: 0px 6px 12px #000000;
   background-color: #d1d1d1;
@@ -109,10 +138,10 @@ button:active {
   color: #f2f2f2;
   text-align: center;
   padding: 10px 16px;
-  margin: 10px 5px 10px 5px;
-  background-color: transparent;
-  border-radius: 50px;
-  box-shadow: 0px 8px #000000;
+  margin: 5px 5px 25px 5px;
+  background-color: #0f0f17;
+  border-radius: 20px;
+  box-shadow: 0 0px 6px #000000;
   text-decoration: none;
   transition: all 0.3s ease-in;
   font-size: 16px;
@@ -126,10 +155,65 @@ button:active {
   color: black;
  }
 
-.topnav a:active {
-  transition: all 0.3s ease-in;
-  font-size: 12px;
-  border-radius: 50px;
-  background-color: #13141c;
-  color: white;
- }
+
+
+.window_btn {
+  align-self: top;
+  font-size: 9px;
+  border: solid 2px;
+  padding: 7px;
+  color: #d78787;
+  border-color: #d78787;
+  background-color: #d78787;
+  justify-self: right;
+  margin: 20px;
+  border-radius: 100%;
+}
+.window_btn:hover {
+  align-self: top;
+  color: #d1d1d1;
+  border: solid 2px #d78787;
+  background-color: #d78787;
+  box-shadow: 0 0px 22px #d78787;
+  justify-self: right;
+  border-radius: 100%;
+}
+
+
+ /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
