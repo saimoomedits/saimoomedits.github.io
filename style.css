@@ -1,0 +1,135 @@
+* {
+  font-family: Font;
+  src: url("./DTM_NF.ttf");
+}
+
+@keyframes white-out {
+  from {font-size: 0px}
+  to {font-size: 36px;}
+}
+
+@keyframes fade {
+  from {opacity: 0%}
+  to {opacity: 100%;}
+}
+
+* {
+    background-color: #13141c;
+    text-align: center;
+}
+
+.description {
+  animation-name: fade;
+  animation-duration: 1s;
+  font-size: 20px;
+  text-align: center;
+  color: #cfcfcf;
+  transition: ease 1s;
+  font-weight: bold;
+}
+
+.text_head {
+  animation-name: white-out;
+  animation-duration: 1s;
+  font-size: 36px;
+  text-align: center;
+  color: #cfcfcf;
+  transition: ease 1s;
+  font-weight: bold;
+}
+div {
+  grid-gap: 1em;
+  text-align: center;
+  align-content: center;
+}
+img {
+  border-radius: 20%;
+  animation-name: fade;
+  animation-duration: 2s;
+  box-shadow: 0px 4px 22px #000000;
+  align-self: center;
+  justify-self: center;
+  height: 270px;
+  margin: 50px 0px 10px 10px;
+}
+h1, h2, a {
+  color: var(--pr);
+}
+a:hover {
+  color: var(--al);
+}
+button {
+  align-self: top;
+  justify-self: right;
+  margin: 1.5em;
+  border-radius: 100%;
+  padding: .75em;
+}
+button {
+  transform: scale(1.5);
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  border: solid 4px;
+  border-radius: 50px;
+  border-color: #d1d1d1;
+  color: #d1d1d1;
+}
+
+button:hover {
+  transform: scale(1.5);
+  transition: all 0.4s ease;
+  border: solid 4px;
+  border-color: transparent;
+  box-shadow: 0px 6px 12px #000000;
+  background-color: #d1d1d1;
+  color: #1f1f26;
+  border-radius: 10px;
+}
+
+button:active {
+  transform: scale(1.2);
+  transition: all 0.2s ease;
+  border: solid 4px;
+  border-color: transparent;
+  box-shadow: 0px 6px 12px #000000;
+  background-color: #d1d1d1;
+  color: #1f1f26;
+  border-radius: 10px;
+}
+
+
+.topnav {
+  background-color: transparent;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 16px;
+  margin: 10px 5px 10px 5px;
+  background-color: transparent;
+  border-radius: 50px;
+  box-shadow: 0px 8px #000000;
+  text-decoration: none;
+  transition: all 0.3s ease-in;
+  font-size: 16px;
+}
+.topnav a:hover {
+  transition: all 0.2s ease;
+  font-size: 16px;
+  box-shadow: 0px 0px 8px #d1d1d1;
+  border-radius: 10px;
+  background-color: #d1d1d1;
+  color: black;
+ }
+
+.topnav a:active {
+  transition: all 0.3s ease-in;
+  font-size: 12px;
+  border-radius: 50px;
+  background-color: #13141c;
+  color: white;
+ }
